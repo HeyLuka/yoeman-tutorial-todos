@@ -1,4 +1,5 @@
-# first-pro
+# yoeman-tutorial-todos
+Repository for yoeman 1st tutorial - todo lists
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
 version 0.15.1.
