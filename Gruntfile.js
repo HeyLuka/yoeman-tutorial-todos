@@ -19,6 +19,12 @@ module.exports = function (grunt) {
     cdnify: 'grunt-google-cdn'
   });
 
+  require('jit-grunt')(grunt, {
+    sprite: 'grunt-spritesmith',
+    foo: '@abc/grunt-foo',
+    bar: 'customer/bar.js'
+  });
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
