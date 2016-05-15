@@ -8,9 +8,16 @@
  * Controller of the firstProApp
  */
 angular.module('firstProApp')
-  .controller('MainCtrl', function ($scope) {
-    // $scope.todos = ['Item 1', 'Item 2', 'Item 3'];
-    $scope.todos = [];
+  .controller('MainCtrl', function ($scope, localStorageService) {
+    var todoInStore = localStorageService.get('todos');
+
+    $scope.todos = todoInStore || [];
+
+    $scope.$watch('todos', function () {
+        localStorageService.set('todos', $scope.todos);
+    }, true);
+
+    // initialize the new todo item to ''
     $scope.todo = '';
 
     $scope.addTodo = function () {
